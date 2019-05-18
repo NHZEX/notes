@@ -1,0 +1,2 @@
+#vagrant plugin install vagrant-triggers 新版vagrant用不上
+#vagrant plugin install vagrant-winnfsd  新版vbox似乎用不上

@@ -1,0 +1,37 @@
+apt-get install php7.1-dev
+
+
+pecl install swoole-2.2.0
+
+
+wget https://github.com/swoole/swoole-src/archive/v2.2.0.tar.gz
+wget https://github.com/swoole/swoole-src/archive/v4.0.0.tar.gz
+
+##2.2.0
+
+--enable-swoole-debug  打开调试日志，开启此选项后swoole将打印各类细节的调试日志。生产环境不要启用。
+--enable-trace-log  打开追踪日志, 仅内核开发时使用
+--enable-sockets 依赖sockets扩展 增加对sockets资源的支持。开启此参数，swoole_event_add就可以添加sockets扩展创建的连接到swoole的事件循环中。另外Server和Client的getSocket()方法也需要依赖此编译参数。
+--enable-openssl 启用SSL支持 使用操作系统提供的libssl.so动态连接库
+--with-openssl-dir 指定openssl库的路径。--with-openssl-dir=/opt/openssl/
+--enable-http2 依赖nghttp2库 增加对HTTP2的支持
+--enable-async-redis 依赖hiredis库 增加异步Redis客户端支持
+--enable-timewheel 此设置为试验性质 启用时间轮算法，优化心跳检测性能
+--enable-mysqlnd 依赖mysqlnd模块 启用mysqlnd支持，启用swoole_mysql::escapse方法。启用此参数后，PHP必须有mysqlnd模块，否则会导致swoole无法运行。
+--enable-ringbuffer 开启RingBuffer内存池 此设置为试验性质，主要用于提升性能，生产环境请不要开启
+--enable-swoole-static 静态编译到PHP内核中，非静态编译（swoole.so）请勿使用此参数。
+# 2.0.8或更高版本已默认开启--enable-coroutine
+--enable-coroutine 启用协程
+--enable-coroutine-postgresql 依赖libpq库 启用协程Postgresql客户端
+--with-libpq-dir 指定libpq库的路径. --with-libpq-dir=/etc/postgresql
+
+tar zxvf  v2.2.0.tar.gz
+cd swoole-src-2.2.0
+make distclean && make clean
+phpize
+./configure --enable-openssl --enable-async-redis --enable-mysqlnd --enable-coroutine-postgresql
+make -j && sudo make install
+
+echo "extension=swoole.so" > /etc/php/7.1/mods-available/swoole.ini
+ln -s /etc/php/7.1/mods-available/swoole.ini /etc/php/7.1/cli/conf.d/swoole.ini
+

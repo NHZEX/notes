@@ -1,0 +1,81 @@
+---
+memory: 768
+maxmemory: 2048
+cpus: 2
+provider: hyperv
+mac: "00:15:5D:00:0A:00"
+auto_start_action: "Nothing"
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+smb: &smb_options
+  options:
+    smb_username: "s123"
+    smb_password: "HNYMP8tQmOiLFvWj"
+    mount_options: ['iocharset=utf8']
+  #mount_options: ["vers=3.02","mfsymlinks"]
+
+#共享文件夹配置
+folders:
+    - map: G:/laravel-code
+      to: /home/vagrant/Code
+      type: "smb"
+      <<: *smb_options
+    - map: G:/.php-dev
+      to: /home/vagrant/www
+      type: "smb"
+      <<: *smb_options
+
+#站点配置
+sites:
+    - map: phpmyadmin.test
+      to: /home/vagrant/www/phpMyAdmin
+      php: "7.1"
+    - map: homestead.test
+      to: /home/vagrant/Code/Laravel/public
+      php: "7.1"
+    - map: sample.test
+      to: /home/vagrant/Code/sample/public
+      php: "7.1"
+    - map: mythink.test
+      to: /home/vagrant/Code/mythink/public
+      php: "7.1"
+    - map: thinkadmin.test
+      to: /home/vagrant/Code/thinkadmin3
+      php: "7.1"
+    - map: dolphin.test
+      to: /home/vagrant/www/DolphinPHP1.2.1
+      type: "dolphin2"
+      php: "7.1"
+    - map: eacoo.test
+      to: /home/vagrant/www/EacooPHP
+      type: "thinkphp5"
+      php: "7.1"
+
+#数据库配置
+databases:
+    - homestead
+    - sample
+    - mythink
+    - thinkadmin3
+
+#自定义变量
+#variables:
+#    - key: APP_ENV
+#      value: local
+#
+# blackfire:
+#     - id: foo
+#       token: bar
+#       client-id: foo
+#       client-token: bar
+#
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp

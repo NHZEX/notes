@@ -1,0 +1,10 @@
+sudo cp -f redis.conf /etc/redis/redis.conf
+
+mkdir /home/redis
+chown redis:redis /home/redis/
+
+vim /etc/redis/redis.conf
+dir ./  => dir /home/redis
+
+
+service redis-server restart
