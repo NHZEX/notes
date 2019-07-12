@@ -7,7 +7,16 @@
     ExecStart=/usr/bin/dockerd
 ```
 
-- 第二部（编辑配置文件）
+或
+
+```config
+[Service]
+    ExecStart=
+    ExecStart=/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375
+```
+跳过第二步
+
+- 第二步（编辑配置文件）
 ```vim /etc/docker/daemon.json```
 
 样式一
