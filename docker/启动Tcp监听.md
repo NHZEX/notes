@@ -22,14 +22,14 @@
 样式一
 ```json
 {
-  "hosts": ["unix:///var/run/docker.sock", "tcp://127.0.0.1:2379"]
+  "hosts": ["unix:///var/run/docker.sock", "tcp://127.0.0.1:2375"]
 }
 ```
 
 样式二
 ```json
 {
-  "hosts": ["fd://", "tcp://127.0.0.1:2379"]
+  "hosts": ["fd://", "tcp://127.0.0.1:2375"]
 }
 ```
 
