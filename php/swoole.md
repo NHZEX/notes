@@ -3,14 +3,13 @@
 - 快速开始
     ```bash
     DEV_PHP_VER="7.2"
-    DEV_SWOOLE_VER="4.3.4"
-    wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar.gz -O swoole-${DEV_SWOOLE_VER}.tar.gz
-    rm -r swoole/* || mkdir -p swoole
-    tar -zxvf swoole-${DEV_SWOOLE_VER}.tar.gz -C swoole --strip-components=1
-    cd swoole
-    phpize${DEV_PHP_VER}
-    ./configure --with-php-config=php-config${DEV_PHP_VER} --enable-sockets --enable-openssl
-    make && make install
+    DEV_SWOOLE_VER="4.4.2"
+    wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar.gz -O swoole-${DEV_SWOOLE_VER}.tar.gz \
+    && mkdir -p swoole || rm -r swoole/* || true \
+    && tar -zxvf swoole-${DEV_SWOOLE_VER}.tar.gz -C swoole --strip-components=1 && cd swoole \
+    && phpize${DEV_PHP_VER} \
+    && ./configure --with-php-config=php-config${DEV_PHP_VER} --enable-sockets --enable-openssl \
+    && make -j$(nproc) && sudo make install
     ```
 - 编译配置 [详细信息](https://wiki.swoole.com/wiki/page/437.html)  
     ```bash
