@@ -8,7 +8,11 @@
     && mkdir -p swoole || rm -r swoole/* || true \
     && tar -zxvf swoole-${DEV_SWOOLE_VER}.tar.gz -C swoole --strip-components=1 && cd swoole \
     && phpize${DEV_PHP_VER} \
-    && ./configure --with-php-config=php-config${DEV_PHP_VER} --enable-sockets --enable-openssl \
+    && ./configure --with-php-config=php-config${DEV_PHP_VER} \
+      --enable-sockets \
+      --enable-openssl \
+      --enable-mysqlnd \
+      --enable-sockets \
     && make -j$(nproc) && sudo make install
     ```
 - 编译配置 [详细信息](https://wiki.swoole.com/wiki/page/437.html)  
@@ -34,8 +38,6 @@
 ### 部署安装
 ```bash
 DEV_PHP_VER="7.2"
-echo "extension=swoole.so" > /etc/php/${DEV_PHP_VER}/mods-available/swoole.ini
-ln -s /etc/php/${DEV_PHP_VER}/mods-available/swoole.ini /etc/php/${DEV_PHP_VER}/cli/conf.d/26-swoole.ini
-ln -s /etc/php/${DEV_PHP_VER}/mods-available/swoole.ini /etc/php/${DEV_PHP_VER}/fpm/conf.d/26-swoole.ini
-service php${DEV_PHP_VER}-fpm restart
+echo "extension=swoole.so" | sudo tee /etc/php/${DEV_PHP_VER}/mods-available/swoole.ini
+sudo ln -s /etc/php/${DEV_PHP_VER}/mods-available/swoole.ini /etc/php/${DEV_PHP_VER}/cli/conf.d/26-swoole.ini
 ```
