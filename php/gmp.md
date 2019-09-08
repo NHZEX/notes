@@ -3,5 +3,5 @@
 DEV_PHP_VER="7.2"
 sudo apt-get install libgmp-dev
 sudo apt-get install php${DEV_PHP_VER}-gmp
-service php${DEV_PHP_VER}-fpm restart
+sudo service php${DEV_PHP_VER}-fpm restart
 ```
