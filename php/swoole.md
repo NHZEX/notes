@@ -3,7 +3,7 @@
 - 快速开始
     ```bash
     DEV_PHP_VER="7.2"
-    DEV_SWOOLE_VER="4.4.5"
+    DEV_SWOOLE_VER="4.4.6"
     wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar.gz -O swoole-${DEV_SWOOLE_VER}.tar.gz \
     && mkdir -p swoole-${DEV_SWOOLE_VER} || rm -r swoole-${DEV_SWOOLE_VER}/* || true \
     && tar -zxvf swoole-${DEV_SWOOLE_VER}.tar.gz -C swoole-${DEV_SWOOLE_VER} --strip-components=1 && cd swoole-${DEV_SWOOLE_VER} \
@@ -37,7 +37,7 @@
         
 ### 部署安装
 ```bash
-DEV_PHP_VER="7.2"
+DEV_PHP_VER="7.3"
 echo "extension=swoole.so" | sudo tee /etc/php/${DEV_PHP_VER}/mods-available/swoole.ini
 sudo ln -s /etc/php/${DEV_PHP_VER}/mods-available/swoole.ini /etc/php/${DEV_PHP_VER}/cli/conf.d/26-swoole.ini
 ```
