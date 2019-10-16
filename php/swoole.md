@@ -2,10 +2,10 @@
 - 来源地址: https://github.com/swoole/swoole-src/releases
 - 快速开始
     ```bash
-    DEV_PHP_VER="7.2"
-    DEV_SWOOLE_VER="4.4.6"
+    DEV_PHP_VER="7.3"
+    DEV_SWOOLE_VER="4.4.8"
     wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar.gz -O swoole-${DEV_SWOOLE_VER}.tar.gz \
-    && mkdir -p swoole-${DEV_SWOOLE_VER} || rm -r swoole-${DEV_SWOOLE_VER}/* || true \
+    && mkdir -p swoole-${DEV_SWOOLE_VER} || rm -r swoole-${DEV_SWOOLE_VER} || true \
     && tar -zxvf swoole-${DEV_SWOOLE_VER}.tar.gz -C swoole-${DEV_SWOOLE_VER} --strip-components=1 && cd swoole-${DEV_SWOOLE_VER} \
     && phpize${DEV_PHP_VER} \
     && ./configure --with-php-config=php-config${DEV_PHP_VER} \
