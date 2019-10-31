@@ -7,7 +7,7 @@ pecl install redis
 - 来源地址: https://github.com/phpredis/phpredis  
 - 快速开始
     ```bash
-    DEV_PHP_VER="7.2"
+    DEV_PHP_VER="7.3"
     DEV_PHPREDIS_VER="5.0.2"
     wget -c -t 5 https://github.com/phpredis/phpredis/archive/${DEV_PHPREDIS_VER}.tar.gz -O phpredis-${DEV_PHPREDIS_VER}.tar.gz \
     && rm -r phpredis-${DEV_PHPREDIS_VER}/* || mkdir -p phpredis-${DEV_PHPREDIS_VER} || true \
@@ -28,7 +28,7 @@ pecl install redis
 
 ### 扩展部署
 ```bash
-DEV_PHP_VER="7.2"
+DEV_PHP_VER="7.3"
 echo "extension=redis.so" | sudo tee /etc/php/${DEV_PHP_VER}/mods-available/redis.ini
 sudo ln -s /etc/php/${DEV_PHP_VER}/mods-available/redis.ini /etc/php/${DEV_PHP_VER}/cli/conf.d/26-redis.ini
 sudo ln -s /etc/php/${DEV_PHP_VER}/mods-available/redis.ini /etc/php/${DEV_PHP_VER}/fpm/conf.d/26-redis.ini
