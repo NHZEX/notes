@@ -3,7 +3,7 @@
 - 快速开始
     ```bash
     DEV_PHP_VER="7.3"
-    DEV_SWOOLE_VER="4.4.8"
+    DEV_SWOOLE_VER="4.4.12"
     wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar.gz -O swoole-${DEV_SWOOLE_VER}.tar.gz \
     && rm -r swoole-${DEV_SWOOLE_VER} || true && mkdir -p swoole-${DEV_SWOOLE_VER} \
     && tar -zxvf swoole-${DEV_SWOOLE_VER}.tar.gz -C swoole-${DEV_SWOOLE_VER} --strip-components=1 && cd swoole-${DEV_SWOOLE_VER} \
