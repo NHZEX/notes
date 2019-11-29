@@ -1,6 +1,6 @@
 ## 替换 ppa-launchpad 软件源
 ```bash
-find /etc/apt/sources.list.d/ -type f -name "*.list" -exec  sed  -i.bak -r  's#deb(-src)?\s*http(s)?://ppa.launchpad.net#deb\1 http\2://launchpad.proxy.ustclug.org#ig' {} \;
+find /etc/apt/sources.list.d/ -type f -name "*.list" -exec  sed  -i.bak -r  's#deb(-src)?\s*http(s)?://ppa.launchpad.net#deb\1 http\2://ppa2.ozxh.wang#ig' {} \;
 ```
 
 ## 附录-更多源反代
