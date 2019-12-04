@@ -8,13 +8,12 @@ pecl install redis
 - 快速开始
     ```bash
     DEV_PHP_VER="7.3"
-    DEV_PHPREDIS_VER="5.1.0"
+    DEV_PHPREDIS_VER="5.1.1"
     wget -c -t 5 https://github.com/phpredis/phpredis/archive/${DEV_PHPREDIS_VER}.tar.gz -O phpredis-${DEV_PHPREDIS_VER}.tar.gz \
     && rm -r phpredis-${DEV_PHPREDIS_VER} || true && mkdir -p phpredis-${DEV_PHPREDIS_VER} || true \
     && tar -zxvf phpredis-${DEV_PHPREDIS_VER}.tar.gz -C phpredis-${DEV_PHPREDIS_VER} --strip-components=1 \
     && cd phpredis-${DEV_PHPREDIS_VER} \
     && phpize${DEV_PHP_VER} && ./configure --with-php-config=php-config${DEV_PHP_VER} \
-      --enable-redis-igbinary \
     && make -j$(nproc) && sudo make install
     ```
 - 编译配置
