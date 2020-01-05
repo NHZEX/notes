@@ -62,3 +62,5 @@ sudo make install
 if [[ ! -f ${SWOOLE_INI} ]]; then
     echo "extension=swoole.so" | sudo tee ${SWOOLE_INI}
 fi
+
+php${PHP_VER} --ri swoole
