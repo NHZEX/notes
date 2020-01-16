@@ -55,10 +55,8 @@ make clean || true
 
 phpize${PHP_VER}
 ./configure --with-php-config=php-config${PHP_VER} \
-    --enable-sockets \
     --enable-openssl \
-    --enable-mysqlnd \
-    --enable-sockets
+    --enable-mysqlnd
 
 make -j$(nproc)
 sudo make install
