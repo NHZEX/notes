@@ -2,7 +2,7 @@
 set -e
 
 PHP_VER=7.3
-SWOOLE_VER=4.4.14
+SWOOLE_VER=4.4.16
 #INSTALL_DIR="$(dirname "$0")/.install"
 INSTALL_DIR="${HOME}/install"
 
@@ -56,6 +56,7 @@ make clean || true
 phpize${PHP_VER}
 ./configure --with-php-config=php-config${PHP_VER} \
     --enable-openssl \
+    --enable-http2 \
     --enable-mysqlnd
 
 make -j$(nproc)
