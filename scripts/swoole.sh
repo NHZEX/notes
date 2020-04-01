@@ -2,7 +2,7 @@
 set -e
 
 PHP_VER=7.3
-SWOOLE_VER=4.4.16
+SWOOLE_VER=4.4.17
 #INSTALL_DIR="$(dirname "$0")/.install"
 INSTALL_DIR="${HOME}/install"
 
@@ -57,7 +57,8 @@ phpize${PHP_VER}
 ./configure --with-php-config=php-config${PHP_VER} \
     --enable-openssl \
     --enable-http2 \
-    --enable-mysqlnd
+    --enable-mysqlnd \
+    --enable-sockets
 
 make -j$(nproc)
 sudo make install
