@@ -8,7 +8,7 @@ pecl install redis
 - 快速开始
     ```bash
     DEV_PHP_VER="7.3"
-    DEV_PHPREDIS_VER="5.1.1"
+    DEV_PHPREDIS_VER="5.2.1"
     wget -c -t 5 https://github.com/phpredis/phpredis/archive/${DEV_PHPREDIS_VER}.tar.gz -O phpredis-${DEV_PHPREDIS_VER}.tar.gz \
     && rm -r phpredis-${DEV_PHPREDIS_VER} || true && mkdir -p phpredis-${DEV_PHPREDIS_VER} || true \
     && tar -zxvf phpredis-${DEV_PHPREDIS_VER}.tar.gz -C phpredis-${DEV_PHPREDIS_VER} --strip-components=1 \
