@@ -3,7 +3,7 @@
 ./deploy_env.sh 0.0.0.0
 
 # swoole-tracker
-DEV_PHP_VER="7.4"
+DEV_PHP_VER="7.3"
 sudo cp swoole_tracker${DEV_PHP_VER//./}.so `php-config${DEV_PHP_VER} --extension-dir`/swoole_tracker.so
 echo -e "extension=swoole_tracker.so\n\
 apm.enable=1\n\
