@@ -9,8 +9,8 @@ pecl install event
 - 快速开始
     ```bash
     apt install libevent-dev
-    DEV_PHP_VER="7.2"
-    DEV_EVENT_VER="2.4.2"
+    DEV_PHP_VER="7.4"
+    DEV_EVENT_VER="2.5.6"
     url="https://bitbucket.org/osmanov/pecl-event/get/${DEV_EVENT_VER}.tar.bz2"
     filename=$(curl -sI  ${url} | grep -o -E 'filename=.*$' | tr -d '\r\n' | sed -e 's/filename=//')
     wget -c -t 5 ${url} -O event-${DEV_EVENT_VER}.tar.bz2
@@ -22,7 +22,7 @@ pecl install event
 
 ### 部署安装
 ```bash
-DEV_PHP_VER="7.2"
+DEV_PHP_VER="7.4"
 echo "extension=event.so" > /etc/php/${DEV_PHP_VER}/mods-available/event.ini
 ln -s /etc/php/${DEV_PHP_VER}/mods-available/event.ini /etc/php/${DEV_PHP_VER}/cli/conf.d/26-event.ini
 ```

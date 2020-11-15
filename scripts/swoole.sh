@@ -40,6 +40,7 @@ echo "make dir : ${SWOOLE_MAKE_DIR}"
 echo "tar file : ${SWOOLE_TAR}"
 echo "tar sha1 : ${SWOOLE_SUM}"
 
+rm -r ${SWOOLE_MAKE_DIR}/* || true
 mkdir -p ${SWOOLE_DIR}
 mkdir -p ${SWOOLE_MAKE_DIR}
 
@@ -58,7 +59,8 @@ phpize${PHP_VER}
     --enable-openssl \
     --enable-http2 \
     --enable-mysqlnd \
-    --enable-sockets
+    --enable-sockets \
+    --enable-swoole-json
 
 make -j$(nproc)
 sudo make install
