@@ -4,6 +4,7 @@
 ### 方法1
 ```bash
 sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+sudo sed -i 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 # 如替换的地址与文件地址不一致请自行更改
 ```
 ### 方法2 
