@@ -33,3 +33,7 @@ Edit /etc/ssh/sshd_config and set
 
 UsePAM no
 ```
+
+### 自动登录
+add key to ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
