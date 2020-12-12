@@ -9,5 +9,6 @@ echo -e "extension=swoole_tracker.so\n\
 apm.enable=1\n\
 apm.sampling_rate=10" | sudo tee /etc/php/${DEV_PHP_VER}/mods-available/swoole_tracker.ini
 sudo ln -s /etc/php/${DEV_PHP_VER}/mods-available/swoole_tracker.ini /etc/php/${DEV_PHP_VER}/fpm/conf.d/99-swoole_tracker.ini
+sudo ln -s /etc/php/${DEV_PHP_VER}/mods-available/swoole_tracker.ini /etc/php/${DEV_PHP_VER}/cli/conf.d/99-swoole_tracker.ini
 sudo systemctl restart php${DEV_PHP_VER}-fpm
 ```

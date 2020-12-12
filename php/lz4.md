@@ -1,11 +1,11 @@
 ### 源码编译安装  
-- 来源地址: https://pecl.php.net/package/lzf  
+- 来源地址: https://github.com/kjdev/php-ext-lz4  
 - 快速开始:
 ```shell script
 DEV_PHP_VER="7.4"
-mkdir LZF
-tar -xvf LZF-1.6.8.tgz -C LZF --strip-components=1
-cd LZF
+mkdir lz4
+tar -xvf lz4-0.3.6.tar.gz -C lz4 --strip-components=1
+cd lz4
 phpize${DEV_PHP_VER} && ./configure --with-php-config=php-config${DEV_PHP_VER}
 make -j$(nproc) && sudo make install
 
