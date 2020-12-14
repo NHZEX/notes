@@ -29,7 +29,22 @@ check_interval = 0
     disable_cache = false
     volumes = ["/var/run/docker.sock:/var/run/docker.sock", "/cache", "/builds:/builds"]
     shm_size = 0
+    pull_policy = "always" # available: always, if-not-present, never
 ```
+
+### 解决拉起本地镜像错误问题（Error response from daemon: pull access denied for ...）
+
+- https://gitlab.com/gitlab-org/gitlab-foss/-/issues/49001  
+- https://docs.gitlab.com/runner/executors/docker.html#how-pull-policies-work
+- https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/115  
+
+pull_policy 设置为 `never` （副作用，无法拉起线上自编译镜像）
+
+### 数据共享相关资料
+
+- https://gitlab.com/gitlab-org/gitlab-foss/-/issues/47062  
+- https://gitlab.com/gitlab-org/gitlab-foss/-/issues/62802
+- https://gitlab.com/groups/gitlab-org/-/epics/1418  
 
 ## docker-compose.yml
 ```yaml
