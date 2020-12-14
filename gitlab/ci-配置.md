@@ -7,3 +7,6 @@
 
 [api-token](https://docs.gitlab.com/ee/api/README.html#personalproject-access-tokens)
 [api-repositories](https://docs.gitlab.com/ee/api/repositories.html)
+
+[数据缓存-artifacts](https://docs.gitlab.com/ee/ci/pipelines/job_artifacts.html)
+[数据缓存-cache](https://docs.gitlab.com/ee/ci/caching/)
