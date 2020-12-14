@@ -10,3 +10,5 @@
 
 [数据缓存-artifacts](https://docs.gitlab.com/ee/ci/pipelines/job_artifacts.html)
 [数据缓存-cache](https://docs.gitlab.com/ee/ci/caching/)
+
+[CI管道](https://docs.gitlab.com/12.10/ee/ci/pipelines/)
