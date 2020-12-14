@@ -1,0 +1,1 @@
+[配置参考-官方](https://docs.gitlab.com/ee/ci/yaml/)  

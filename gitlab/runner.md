@@ -1,6 +1,7 @@
 ## 部署指南
 [docker模式部署](https://docs.gitlab.com/runner/install/docker.html)  
 [注册Runner](https://docs.gitlab.com/runner/register/index.html#docker)  
+[使用docker部署ci-cd](https://docs.gitlab.com/ee/ci/docker/using_docker_build.html)  
 
 ## /etc/gitlab-runner/config.toml
 ```toml
@@ -45,6 +46,15 @@ pull_policy 设置为 `never` （副作用，无法拉起线上自编译镜像�
 - https://gitlab.com/gitlab-org/gitlab-foss/-/issues/47062  
 - https://gitlab.com/gitlab-org/gitlab-foss/-/issues/62802
 - https://gitlab.com/groups/gitlab-org/-/epics/1418  
+
+### 是否需要(services docker:dind)
+
+- 当使用`/var/run/docker.sock`时不需要`docker:dind`服务
+
+### gitlab runner docker mount directory empty
+
+- https://gitlab.com/gitlab-org/gitlab-runner/-/issues/1482
+- https://gitlab.com/gitlab-org/gitlab-foss/-/issues/41227
 
 ## docker-compose.yml
 ```yaml
