@@ -2,6 +2,7 @@
 [docker模式部署](https://docs.gitlab.com/runner/install/docker.html)  
 [注册Runner](https://docs.gitlab.com/runner/register/index.html#docker)  
 [使用docker部署ci-cd](https://docs.gitlab.com/ee/ci/docker/using_docker_build.html)  
+[Runner配置解析](https://docs.gitlab.com/runner/configuration/advanced-configuration.html)
 
 ## /etc/gitlab-runner/config.toml
 ```toml
