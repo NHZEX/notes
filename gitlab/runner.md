@@ -84,6 +84,8 @@ gitlab-runner register -n \
   --registration-token "wGwKYCPutwsDLksptzfs" \
   --executor docker \
   --description "runner-166-docker" \
-  --docker-image "docker:19.03.8" \
-  --docker-volumes /var/run/docker.sock:/var/run/docker.sock
+  --docker-image "docker:19.03.14" \
+  --docker-volumes /var/run/docker.sock:/var/run/docker.sock \
+  --docker-volumes /cache \
+  --docker-volumes /builds:/builds
 ```
