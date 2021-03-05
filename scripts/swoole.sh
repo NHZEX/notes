@@ -2,7 +2,7 @@
 set -e
 
 PHP_VER=7.4
-SWOOLE_VER=4.5.8
+SWOOLE_VER=4.5.11
 #INSTALL_DIR="$(dirname "$0")/.install"
 INSTALL_DIR="${HOME}/install"
 
