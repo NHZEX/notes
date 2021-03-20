@@ -54,6 +54,7 @@ cd ${SWOOLE_MAKE_DIR}
 phpize${PHP_VER} --clean
 make clean || true
 
+# curl require apt install libcurl4-openssl-dev
 phpize${PHP_VER}
 ./configure --with-php-config=php-config${PHP_VER} \
     --enable-openssl \
