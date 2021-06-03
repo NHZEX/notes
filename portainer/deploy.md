@@ -1,3 +1,22 @@
+##
+```yaml
+version: '2'
+
+services:
+  portainer:
+    image: portainer/portainer-ce
+    restart: always
+    ports:
+      - "9000:9000"
+    command: -H unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+volumes:
+  portainer_data:
+```
+
 ## agent
 ```yaml
 version: '3'
