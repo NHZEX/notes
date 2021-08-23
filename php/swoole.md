@@ -1,9 +1,9 @@
-### 源码编译安装  
+### `Ubuntu`源码编译安装  
 - 来源地址: https://github.com/swoole/swoole-src/releases
 - 快速开始
     ```bash
-    DEV_PHP_VER="7.3"
-    DEV_SWOOLE_VER="4.4.12"
+    DEV_PHP_VER="7.4"
+    DEV_SWOOLE_VER="4.7.1"
     wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar.gz -O swoole-${DEV_SWOOLE_VER}.tar.gz \
     && mkdir -p swoole-${DEV_SWOOLE_VER} \
     && tar -zxvf swoole-${DEV_SWOOLE_VER}.tar.gz -C swoole-${DEV_SWOOLE_VER} --strip-components=1 && cd swoole-${DEV_SWOOLE_VER} \
@@ -14,6 +14,8 @@
       --enable-openssl \
       --enable-mysqlnd \
       --enable-sockets \
+      --enable-swoole-json \
+      --enable-swoole-curl
     && make clean \
     && make -j$(nproc) && sudo make install
     ```
@@ -37,9 +39,29 @@
     - --enable-sockets    依赖sockets扩展
     - --enable-coroutine-postgresql   [--with-libpq-dir=DIR]    依赖libpq库
         
-### 部署安装
+### `Ubuntu`部署安装
 ```bash
 DEV_PHP_VER="7.3"
 echo "extension=swoole.so" | sudo tee /etc/php/${DEV_PHP_VER}/mods-available/swoole.ini
 sudo ln -s /etc/php/${DEV_PHP_VER}/mods-available/swoole.ini /etc/php/${DEV_PHP_VER}/cli/conf.d/26-swoole.ini
+```
+
+### 宝塔编译安装
+```shell
+DEV_PHP_VER="74"
+DEV_SWOOLE_VER="4.7.1"
+wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar.gz -O swoole-${DEV_SWOOLE_VER}.tar.gz \
+&& mkdir -p swoole-${DEV_SWOOLE_VER} \
+&& tar -zxvf swoole-${DEV_SWOOLE_VER}.tar.gz -C swoole-${DEV_SWOOLE_VER} --strip-components=1 && cd swoole-${DEV_SWOOLE_VER} \
+&& /www/server/php/${DEV_PHP_VER}/bin/phpize --clean \
+&& /www/server/php/${DEV_PHP_VER}/bin/phpize \
+&& ./configure --with-php-config=/www/server/php/${DEV_PHP_VER}/bin/php-config \
+  --enable-sockets \
+  --enable-openssl \
+  --enable-mysqlnd \
+  --enable-sockets \
+  --enable-swoole-json \
+  --enable-swoole-curl
+&& make clean \
+&& make -j$(nproc) && sudo make install
 ```
