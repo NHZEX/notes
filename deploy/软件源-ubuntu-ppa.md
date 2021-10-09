@@ -1,3 +1,9 @@
+## php源
+```bash
+apt install software-properties-common
+LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
+```
+
 ## 替换 ppa-launchpad 软件源
 ```bash
 find /etc/apt/sources.list.d/ -type f -name "*.list" -exec  sed  -i.bak -r  's#deb(-src)?\s*http(s)?://ppa.launchpad.net#deb\1 http\2://ppa2.ozxh.wang#ig' {} \;
