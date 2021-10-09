@@ -1,7 +1,7 @@
 ## 中科大源
 [帮助说明](http://mirrors.ustc.edu.cn/help/ubuntu.html)
 
-### 方法1
+### 方法1（推荐）
 ```bash
 sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 sudo sed -i 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
@@ -9,6 +9,7 @@ sudo sed -i 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 ```
 ### 方法2 
 ```text
+# 18.4 lts
 # 默认注释了源码仓库，如有需要可自行取消注释
 deb https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
