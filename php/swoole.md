@@ -1,24 +1,29 @@
 ### `Ubuntu`源码编译安装  
 - 来源地址: https://github.com/swoole/swoole-src/releases
+- 编译环境
+```bash
+sudo apt install libcurl4-openssl-dev libc-ares-dev
+```
 - 快速开始
-    ```bash
-    DEV_PHP_VER="7.4"
-    DEV_SWOOLE_VER="4.7.1"
-    wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar.gz -O swoole-${DEV_SWOOLE_VER}.tar.gz \
-    && mkdir -p swoole-${DEV_SWOOLE_VER} \
-    && tar -zxvf swoole-${DEV_SWOOLE_VER}.tar.gz -C swoole-${DEV_SWOOLE_VER} --strip-components=1 && cd swoole-${DEV_SWOOLE_VER} \
-    && phpize${DEV_PHP_VER} --clean \
-    && phpize${DEV_PHP_VER} \
-    && ./configure --with-php-config=php-config${DEV_PHP_VER} \
-      --enable-sockets \
-      --enable-openssl \
-      --enable-mysqlnd \
-      --enable-sockets \
-      --enable-swoole-json \
-      --enable-swoole-curl
-    && make clean \
-    && make -j$(nproc) && sudo make install
-    ```
+```bash
+DEV_PHP_VER="7.4"
+DEV_SWOOLE_VER="4.7.1"
+wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar.gz -O swoole-${DEV_SWOOLE_VER}.tar.gz \
+&& mkdir -p ./swoole \
+&& tar -zxvf swoole-${DEV_SWOOLE_VER}.tar.gz -C ./swoole --strip-components=1 && cd ./swoole \
+&& phpize${DEV_PHP_VER} --clean \
+&& phpize${DEV_PHP_VER} \
+&& ./configure --with-php-config=php-config${DEV_PHP_VER} \
+  --enable-sockets \
+  --enable-openssl \
+  --enable-mysqlnd \
+  --enable-sockets \
+  --enable-swoole-json \
+  --enable-swoole-curl \
+  --enable-cares
+&& make clean \
+&& make -j$(nproc) && sudo make install
+```
 - 编译配置 [详细信息](https://wiki.swoole.com/wiki/page/437.html)  
     ```bash
     ./configure [--enable-sockets] [--enable-openssl [--with-openssl-dir=DIR]]
