@@ -62,7 +62,8 @@ phpize${PHP_VER}
     --enable-mysqlnd \
     --enable-sockets \
     --enable-swoole-json \
-    --enable-swoole-curl
+    --enable-swoole-curl \
+    --enable-cares
 
 make -j$(nproc)
 sudo make install
