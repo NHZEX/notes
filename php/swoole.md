@@ -66,7 +66,7 @@ wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar
   --enable-mysqlnd \
   --enable-sockets \
   --enable-swoole-json \
-  --enable-swoole-curl
+  --enable-swoole-curl \
 && make clean \
 && make -j$(nproc) && sudo make install
 ```
