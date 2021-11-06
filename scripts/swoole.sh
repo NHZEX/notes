@@ -2,9 +2,11 @@
 set -e
 
 PHP_VER=7.4
-SWOOLE_VER=4.5.11
+SWOOLE_VER=v4.7.1
 #INSTALL_DIR="$(dirname "$0")/.install"
 INSTALL_DIR="${HOME}/install"
+
+sudo apt install libevent-dev libcurl4-openssl-dev libc-ares-dev libpq-dev
 
 while getopts 'p:s:' OPT; do
     case ${OPT} in
@@ -18,14 +20,14 @@ while getopts 'p:s:' OPT; do
 done
 
 downSwoole () {
-    wget -c "https://github.com/swoole/swoole-src/archive/v${SWOOLE_VER}.tar.gz" -O "${SWOOLE_TAR}"
+    wget -c "https://github.com/swoole/swoole-src/archive/${SWOOLE_VER}.tar.gz" -O "${SWOOLE_TAR}"
     sha1sum -b ${SWOOLE_TAR} > ${SWOOLE_SUM}
 }
 
 SWOOLE_DIR="${INSTALL_DIR}/swoole"
-SWOOLE_TAR="${SWOOLE_DIR}/v${SWOOLE_VER}.tar.gz"
-SWOOLE_SUM="${SWOOLE_DIR}/v${SWOOLE_VER}.sha1"
-SWOOLE_MAKE_DIR="${SWOOLE_DIR}/v${SWOOLE_VER}"
+SWOOLE_TAR="${SWOOLE_DIR}/${SWOOLE_VER}.tar.gz"
+SWOOLE_SUM="${SWOOLE_DIR}/${SWOOLE_VER}.sha1"
+SWOOLE_MAKE_DIR="${SWOOLE_DIR}/${SWOOLE_VER}"
 SWOOLE_INI="30-swoole.ini" # /etc/php/${PHP_VER}/cli/conf.d/
 
 PHP_INI_FILE=`php${PHP_VER} -r "echo php_ini_loaded_file();"`
@@ -63,7 +65,8 @@ phpize${PHP_VER}
     --enable-sockets \
     --enable-swoole-json \
     --enable-swoole-curl \
-    --enable-cares
+    --enable-cares \
+    --enable-swoole-pgsql
 
 make -j$(nproc)
 sudo make install
