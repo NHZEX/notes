@@ -7,7 +7,7 @@ sudo apt install libcurl4-openssl-dev libc-ares-dev
 - 快速开始
 ```bash
 DEV_PHP_VER="7.4"
-DEV_SWOOLE_VER="4.7.1"
+DEV_SWOOLE_VER="4.8.2"
 wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar.gz -O swoole-${DEV_SWOOLE_VER}.tar.gz \
 && mkdir -p ./swoole \
 && tar -zxvf swoole-${DEV_SWOOLE_VER}.tar.gz -C ./swoole --strip-components=1 && cd ./swoole \
@@ -46,15 +46,15 @@ wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar
         
 ### `Ubuntu`部署安装
 ```bash
-DEV_PHP_VER="7.3"
+DEV_PHP_VER="7.4"
 echo "extension=swoole.so" | sudo tee /etc/php/${DEV_PHP_VER}/mods-available/swoole.ini
-sudo ln -s /etc/php/${DEV_PHP_VER}/mods-available/swoole.ini /etc/php/${DEV_PHP_VER}/cli/conf.d/26-swoole.ini
+sudo ln -s /etc/php/${DEV_PHP_VER}/mods-available/swoole.ini /etc/php/${DEV_PHP_VER}/cli/conf.d/30-swoole.ini
 ```
 
 ### 宝塔编译安装
 ```shell
 DEV_PHP_VER="74"
-DEV_SWOOLE_VER="4.7.1"
+DEV_SWOOLE_VER="4.8.2"
 wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar.gz -O swoole-${DEV_SWOOLE_VER}.tar.gz \
 && mkdir -p swoole-${DEV_SWOOLE_VER} \
 && tar -zxvf swoole-${DEV_SWOOLE_VER}.tar.gz -C swoole-${DEV_SWOOLE_VER} --strip-components=1 && cd swoole-${DEV_SWOOLE_VER} \
@@ -67,6 +67,7 @@ wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar
   --enable-sockets \
   --enable-swoole-json \
   --enable-swoole-curl \
+  --enable-cares \
 && make clean \
 && make -j$(nproc) && sudo make install
 ```
