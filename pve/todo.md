@@ -2,7 +2,7 @@
 
 - 6.x 升级到 7.x https://pve.proxmox.com/wiki/Upgrade_from_6.x_to_7.0
 
-# 代整理的各种资料
+# 待整理的各种资料
 
 - [Cannot mount USB drive with "wrong fs type, bad option, bad superblock" error message](https://askubuntu.com/questions/703183/cannot-mount-usb-drive-with-wrong-fs-type-bad-option-bad-superblock-error-me)
 - [调整PVE的LVM逻辑分区大小](https://lovesykun.cn/archives/pve-lvm.html)

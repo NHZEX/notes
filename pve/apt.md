@@ -2,10 +2,10 @@
 
 ### /etc/apt/sources.list
 ```
-#deb http://ftp.debian.org/debian buster main contrib
-deb http://mirrors.ustc.edu.cn/debian buster main contrib
-#deb http://ftp.debian.org/debian buster-updates main contrib
-deb http://mirrors.ustc.edu.cn/debian buster-updates main contrib
+#deb http://ftp.debian.org/debian bullseye main contrib
+deb http://mirrors.ustc.edu.cn/debian bullseye main contrib
+#deb http://ftp.debian.org/debian bullseye-updates main contrib
+deb http://mirrors.ustc.edu.cn/debian bullseye-updates main contrib
 
 # security updates
 #deb http://security.debian.org buster/updates main contrib
