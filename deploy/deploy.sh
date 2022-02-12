@@ -5,7 +5,7 @@ if [[ "$EUID" -ne 0 ]]
 fi
 
 # 设置必要常量
-DEV_PHP_VER="7.2"
+DEV_PHP_VER="7.4"
 DEV_PHPREDIS_VER="4.2.0"
 DEV_SWOOLE_VER="4.2.13"
 INSTALL_ROOT_DIR=/home/vagrant/install
@@ -17,9 +17,9 @@ composer config -g repo.packagist composer https://packagist.laravel-china.org
 mkdir -p ${INSTALL_ROOT_DIR} && cd ${INSTALL_ROOT_DIR} || exit
 
 # 切换默认版本
-update-alternatives --set php /usr/bin/php${DEV_PHP_VER} && \
-update-alternatives --set php-config /usr/bin/php-config${DEV_PHP_VER} && \
-update-alternatives --set phpize /usr/bin/phpize${DEV_PHP_VER} || exit
+sudo update-alternatives --set php /usr/bin/php${DEV_PHP_VER} && \
+sudo update-alternatives --set php-config /usr/bin/php-config${DEV_PHP_VER} && \
+sudo update-alternatives --set phpize /usr/bin/phpize${DEV_PHP_VER} || exit
 
 # 安装gmp
 apt-get install libgmp-dev && \
