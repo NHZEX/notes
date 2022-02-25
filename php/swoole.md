@@ -53,8 +53,8 @@ sudo ln -s /etc/php/${DEV_PHP_VER}/mods-available/swoole.ini /etc/php/${DEV_PHP_
 
 ### 宝塔编译安装
 ```shell
-DEV_PHP_VER="74"
-DEV_SWOOLE_VER="4.8.6"
+DEV_PHP_VER="80"
+DEV_SWOOLE_VER="4.8.7"
 wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar.gz -O swoole-${DEV_SWOOLE_VER}.tar.gz \
 && mkdir -p swoole-${DEV_SWOOLE_VER} \
 && tar -zxvf swoole-${DEV_SWOOLE_VER}.tar.gz -C swoole-${DEV_SWOOLE_VER} --strip-components=1 && cd swoole-${DEV_SWOOLE_VER} \
