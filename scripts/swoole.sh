@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-PHP_VER=7.4
-SWOOLE_VER=v4.7.1
+PHP_VER=8.0
+SWOOLE_VER=v4.8.8
 #INSTALL_DIR="$(dirname "$0")/.install"
 INSTALL_DIR="${HOME}/install"
 
