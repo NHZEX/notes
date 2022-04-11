@@ -5,7 +5,7 @@ if [[ "$EUID" -ne 0 ]]
 fi
 
 # 设置必要常量
-DEV_PHP_VER="7.4"
+DEV_PHP_VER="8.0"
 DEV_PHPREDIS_VER="4.2.0"
 DEV_SWOOLE_VER="4.2.13"
 INSTALL_ROOT_DIR=/home/vagrant/install
