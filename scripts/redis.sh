@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-PHP_VER=7.4
-REDIS_VER=5.3.3
+PHP_VER=8.0
+REDIS_VER=5.3.7
 #INSTALL_DIR="$(dirname "$0")/.install"
 INSTALL_DIR="${HOME}/install"
 
