@@ -38,6 +38,8 @@ echo "#real_ip_header X-Forwarded-For;" >> "${CONF_CF_REAL_IP_FILE}";
 echo "#Cloudflare" > "${CONF_CF_IP_MAP_FILE}";
 echo "geo \$realip_remote_addr \$is_allow_ip {" >> "${CONF_CF_IP_MAP_FILE}";
 echo "    default  0;" >> "${CONF_CF_IP_MAP_FILE}";
+echo "    ::1  1;" >> "${CONF_CF_IP_MAP_FILE}";
+echo "    127.0.0.1  1;" >> "${CONF_CF_IP_MAP_FILE}";
 
 while IFS= read -r line; do
   echo "    $line  1;" >> "${CONF_CF_IP_MAP_FILE}";
