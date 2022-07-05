@@ -50,11 +50,11 @@ echo ""
 
 # cf ip check
 echo "#Cloudflare" > "${CONF_IP_VAR_CONTROL_FILE}";
-echo "location / {" >> "${CONF_IP_VAR_CONTROL_FILE}";
-echo "  if (\$is_allow_ip != 1) {" >> "${CONF_IP_VAR_CONTROL_FILE}";
-echo "    return 403;" >> "${CONF_IP_VAR_CONTROL_FILE}";
-echo "  }" >> "${CONF_IP_VAR_CONTROL_FILE}";
+#echo "location / {" >> "${CONF_IP_VAR_CONTROL_FILE}";
+echo "if (\$is_allow_ip != 1) {" >> "${CONF_IP_VAR_CONTROL_FILE}";
+echo "  return 444;" >> "${CONF_IP_VAR_CONTROL_FILE}";
 echo "}" >> "${CONF_IP_VAR_CONTROL_FILE}";
+#echo "}" >> "${CONF_IP_VAR_CONTROL_FILE}";
 
 # reload
 
