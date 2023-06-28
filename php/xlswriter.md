@@ -10,7 +10,7 @@ apt install -y zlib1g-dev
 
 ```bash
 DEV_PHP_VER="8.0"
-DEV_XLSWRITER_VER="v1.5.2"
+DEV_XLSWRITER_VER="v1.5.5"
 mkdir -p php-ext-excel-export && cd php-ext-excel-export \
 && git clone https://github.com/viest/php-ext-excel-export . || git fetch \
 && git checkout ${DEV_XLSWRITER_VER} \
@@ -31,17 +31,17 @@ pecl install xlswriter
 ### 扩展部署
 
 ```bash
-DEV_XLSWRITER_VER="v1.5.2"
+DEV_XLSWRITER_VER="v1.5.5"
 mkdir -p php-ext-excel-export && cd php-ext-excel-export \
 && git clone https://github.com/viest/php-ext-excel-export . || git fetch \
 && git checkout ${DEV_XLSWRITER_VER} \
 && git submodule update --init
-DEV_PHP_VER="8.0"
+DEV_PHP_VER="8.1"
 phpize${DEV_PHP_VER} --clean \
 && phpize${DEV_PHP_VER} && ./configure --with-php-config=php-config${DEV_PHP_VER} --enable-reader \
 && make clean && make -j$(nproc) && sudo make install
 
-DEV_PHP_VER="8.0"
+DEV_PHP_VER="8.1"
 echo "extension=xlswriter.so" | sudo tee /etc/php/${DEV_PHP_VER}/mods-available/xlswriter.ini
 sudo ln -s /etc/php/${DEV_PHP_VER}/mods-available/xlswriter.ini /etc/php/${DEV_PHP_VER}/cli/conf.d/20-xlswriter.ini
 sudo ln -s /etc/php/${DEV_PHP_VER}/mods-available/xlswriter.ini /etc/php/${DEV_PHP_VER}/fpm/conf.d/20-xlswriter.ini
@@ -50,8 +50,8 @@ sudo service php${DEV_PHP_VER}-fpm restart
 
 ### 宝塔编译安装
 ```shell
-DEV_PHP_VER="80"
-DEV_XLSWRITER_VER="v1.5.2"
+DEV_PHP_VER="81"
+DEV_XLSWRITER_VER="v1.5.5"
 mkdir -p php-ext-excel-export && cd php-ext-excel-export \
 && rm -rf php-ext-excel-export \
 && git clone https://github.com/viest/php-ext-excel-export . || git fetch \
