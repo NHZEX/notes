@@ -20,6 +20,10 @@
 - [Paravirtualized Block Drivers for Windows](https://pve.proxmox.com/wiki/Paravirtualized_Block_Drivers_for_Windows)
 - [解决Proxmox虚拟机安装Windows 10/Server 2016时找不到硬盘问题](https://wangye.org/blog/archives/1216/)
 
+### 官方资料
+
+- https://pve.proxmox.com/wiki/Roadmap
+
 # 关键字
 
 - pve vm disks resize
