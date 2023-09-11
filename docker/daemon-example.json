@@ -1,0 +1,12 @@
+{
+    "registry-mirrors": [
+        "https://docker.mirrors.ustc.edu.cn",
+        "https://hub-mirror.c.163.com"
+    ],
+    "hosts": [
+        "fd://",
+        "tcp://0.0.0.0:2375"
+    ],
+    "log-driver":"json-file",
+    "log-opts": {"max-size":"256m", "max-file":"3"}
+}
