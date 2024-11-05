@@ -9,13 +9,13 @@ apt install -y zlib1g-dev
 - 来源地址: https://github.com/viest/php-ext-xlswriter  
 
 ```bash
-DEV_PHP_VER="8.0"
-DEV_XLSWRITER_VER="v1.5.5"
+DEV_PHP_VER="8.1"
+DEV_XLSWRITER_VER="v1.5.7"
 mkdir -p php-ext-excel-export && cd php-ext-excel-export \
-&& git clone https://github.com/viest/php-ext-excel-export . || git fetch \
+&& git clone https://github.com/viest/php-ext-excel-export . || git fetch origin master:master --tags \
 && git checkout ${DEV_XLSWRITER_VER} \
 && git submodule update --init \
-&& phpize${DEV_PHP_VER} --clean \
+&& phpize${DEV_PHP_VER} --clean && make clean \
 && phpize${DEV_PHP_VER} && ./configure --with-php-config=php-config${DEV_PHP_VER} --enable-reader \
 && make -j$(nproc) && sudo make install
 ```
@@ -33,7 +33,7 @@ pecl install xlswriter
 ```bash
 DEV_XLSWRITER_VER="v1.5.5"
 mkdir -p php-ext-excel-export && cd php-ext-excel-export \
-&& git clone https://github.com/viest/php-ext-excel-export . || git fetch \
+&& git clone https://github.com/viest/php-ext-excel-export . || git fetch origin master:master --tags \
 && git checkout ${DEV_XLSWRITER_VER} \
 && git submodule update --init
 DEV_PHP_VER="8.1"
