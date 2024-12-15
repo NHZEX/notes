@@ -10,12 +10,12 @@ apt install -y zlib1g-dev
 
 ```bash
 DEV_PHP_VER="8.1"
-DEV_XLSWRITER_VER="v1.5.7"
+DEV_XLSWRITER_VER="v1.5.8"
 mkdir -p php-ext-excel-export && cd php-ext-excel-export \
 && git clone https://github.com/viest/php-ext-excel-export . || git fetch origin master:master --tags \
 && git checkout ${DEV_XLSWRITER_VER} \
 && git submodule update --init \
-&& phpize${DEV_PHP_VER} --clean && make clean \
+&& phpize${DEV_PHP_VER} --clean && (make clean || true ) \
 && phpize${DEV_PHP_VER} && ./configure --with-php-config=php-config${DEV_PHP_VER} --enable-reader \
 && make -j$(nproc) && sudo make install
 ```
@@ -31,7 +31,7 @@ pecl install xlswriter
 ### 扩展部署
 
 ```bash
-DEV_XLSWRITER_VER="v1.5.5"
+DEV_XLSWRITER_VER="v1.5.8"
 mkdir -p php-ext-excel-export && cd php-ext-excel-export \
 && git clone https://github.com/viest/php-ext-excel-export . || git fetch origin master:master --tags \
 && git checkout ${DEV_XLSWRITER_VER} \
@@ -51,7 +51,7 @@ sudo service php${DEV_PHP_VER}-fpm restart
 ### 宝塔编译安装
 ```shell
 DEV_PHP_VER="81"
-DEV_XLSWRITER_VER="v1.5.5"
+DEV_XLSWRITER_VER="v1.5.8"
 mkdir -p php-ext-excel-export && cd php-ext-excel-export \
 && rm -rf php-ext-excel-export \
 && git clone https://github.com/viest/php-ext-excel-export . || git fetch \
