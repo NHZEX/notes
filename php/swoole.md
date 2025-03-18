@@ -2,12 +2,12 @@
 - 来源地址: https://github.com/swoole/swoole-src/releases
 - 编译环境
 ```bash
-sudo apt install libcurl4-openssl-dev libc-ares-dev
+sudo apt install libcurl4-openssl-dev libc-ares-dev libbrotli-dev
 ```
 - 快速开始
 ```bash
-DEV_PHP_VER="8.0"
-DEV_SWOOLE_VER="5.0.3"
+DEV_PHP_VER="8.3"
+DEV_SWOOLE_VER="5.1.7"
 wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar.gz -O swoole-${DEV_SWOOLE_VER}.tar.gz \
 && mkdir -p ./swoole \
 && tar -zxvf swoole-${DEV_SWOOLE_VER}.tar.gz -C ./swoole --strip-components=1 && cd ./swoole \
@@ -19,6 +19,7 @@ wget -c -t 5 https://github.com/swoole/swoole-src/archive/v${DEV_SWOOLE_VER}.tar
   --enable-cares \
   --enable-swoole-curl \
   --enable-swoole-pgsql \
+  --enable-swoole-sqlite \
   --enable-sockets \
   --enable-mysqlnd \
 && make clean \
