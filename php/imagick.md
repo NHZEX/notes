@@ -5,7 +5,7 @@ pecl install imagick
 
 ### 底层本体
 ```shell
-DEV_IMAGICK_SRC_VER="7.1.0-57"
+DEV_IMAGICK_SRC_VER="7.1.1-34"
 wget -c -t 5 https://imagemagick.org/archive/ImageMagick-${DEV_IMAGICK_SRC_VER}.tar.gz -O ImageMagick-${DEV_IMAGICK_SRC_VER}.tar.gz \
 && mkdir -p imagick-${DEV_IMAGICK_SRC_VER} \
 && tar -zxvf ImageMagick-${DEV_IMAGICK_SRC_VER}.tar.gz -C imagick-${DEV_IMAGICK_SRC_VER} --strip-components=1 && cd imagick-${DEV_IMAGICK_SRC_VER} \
