@@ -26,3 +26,16 @@ libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-d
 pyenv install 3.10
 pyenv global 3.10
 ```
+
+## 记录
+
+```bash
+# 获取当前版本路径
+pyenv which python
+
+# 获取指定版本（1）
+pyenv prefix 3.11
+
+# 获取指定版本（2）
+PYENV_VERSION=3.11 pyenv which python
+```
