@@ -23,8 +23,9 @@ libbz2-dev libreadline-dev libsqlite3-dev curl git \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 # 安装 pythone
-pyenv install 3.10
-pyenv global 3.10
+pyenv install 3.11
+pyenv install 3.11-dev
+pyenv global 3.11
 ```
 
 ## 记录
