@@ -13,8 +13,8 @@ if [ ! -d "${CONF_DIR}" ]; then
   mkdir -p "${CONF_DIR}"
 fi
 
-CF_IPV4=`curl https://www.cloudflare.com/ips-v4`
-CF_IPV6=`curl https://www.cloudflare.com/ips-v6`
+CF_IPV4=`curl -f https://www.cloudflare.com/ips-v4 || cat cf_ipv4.txt`
+CF_IPV6=`curl -f https://www.cloudflare.com/ips-v6 || cat cf_ipv6.txt`
 CF_IPS=""
 CF_IPS+=$CF_IPV4
 CF_IPS+=$'\n'
