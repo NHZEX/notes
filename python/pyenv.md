@@ -106,3 +106,7 @@ pyenv versions
 ```bash
 pyenv local uber
 ```
+
+### 资料
+
+虚拟环境路径参考：/home/vagrant/.pyenv/versions/3.x/envs/phpy/bin/python-config
