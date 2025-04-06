@@ -5,15 +5,20 @@
 # 暂无
 ```
 - 快速开始
+
 ```bash
+# 安装python
+pyenv install 3.11-dev
+# 编译
 DEV_PHP_VER="8.1"
 DEV_PHPY_VER="1.0.11"
+DEV_PYTHON_VER="3.11-dev"
 wget -c -t 5 https://github.com/swoole/phpy/archive/${DEV_PHPY_VER}.tar.gz -O phpy-${DEV_PHPY_VER}.tar.gz \
 && mkdir -p ./phpy \
 && tar -zxvf phpy-${DEV_PHPY_VER}.tar.gz -C ./phpy --strip-components=1 && cd ./phpy \
 && phpize${DEV_PHP_VER} --clean \
 && phpize${DEV_PHP_VER} \
-&& ./configure --with-python-config=$(pyenv prefix 3.11)/bin/python-config \
+&& ./configure --with-python-config=$(pyenv prefix ${DEV_PYTHON_VER})/bin/python-config \
 && make clean \
 && make -j$(nproc) && sudo make install
 ```
