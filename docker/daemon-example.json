@@ -1,12 +1,19 @@
 {
     "registry-mirrors": [
-        "https://docker.mirrors.ustc.edu.cn",
-        "https://hub-mirror.c.163.com"
+        "https://docker.1ms.run",
+        "https://docker.m.daocloud.io",
+        "https://docker.1panel.live",
+        "https://tczyx9q4.mirror.aliyuncs.com"
     ],
     "hosts": [
         "fd://",
         "tcp://0.0.0.0:2375"
     ],
     "log-driver":"json-file",
-    "log-opts": {"max-size":"256m", "max-file":"3"}
+    "log-opts": {"max-size":"256m", "max-file":"3"},
+    "proxies": {
+        "http-proxy": "http://192.168.10.1:7891",
+        "https-proxy": "http://192.168.10.1:7891",
+        "no-proxy": "localhost,127.0.0.0/8,192.0.0.0/8,.test"
+    }
 }
