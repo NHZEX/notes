@@ -12,3 +12,8 @@ sudo ln -s /etc/php/${DEV_PHP_VER}/mods-available/swoole_tracker.ini /etc/php/${
 sudo ln -s /etc/php/${DEV_PHP_VER}/mods-available/swoole_tracker.ini /etc/php/${DEV_PHP_VER}/cli/conf.d/99-swoole_tracker.ini
 sudo systemctl restart php${DEV_PHP_VER}-fpm
 ```
+
+## 新版资料
+
+[Swoole Tracker 内存泄漏分析器 v4.0 正式发布](https://mp.weixin.qq.com/s/V9YQKS97H-eWxj923Cqdhw)
+https://doc.swoole.com/@memory-tracker/download.html
